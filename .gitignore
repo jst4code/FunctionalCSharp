@@ -28,5 +28,6 @@ project.lock.json
 .build/
 .testPublish/
 /.vs/
+*.vs/
 .vscode/
 global.json
