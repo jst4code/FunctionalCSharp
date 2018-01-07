@@ -1,0 +1,64 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<# 
+int funcVariations = 15;
+#>
+using Jst4Code.FunctionalCS;
+using System;
+using System.Linq;
+using Xunit;
+
+namespace Jst4Code.FunctionalCSTests.Curry
+{
+	public class CurryFunctionExtensionMethodTests
+	{<# 
+	for(int i = 2; i<funcVariations + 2; i++) { 
+	Func<string, string, string> formatText = (separater, prifix) =>  string.Join(separater, Enumerable.Range(1, i).Select(k => string.Format(prifix,k))); 
+	string variableInitialization = formatText(", ", "value{0} = {0}");
+	string inputForNonCurryFunction = formatText(", ", "value{0}");
+	string curriedMethodCalls = formatText("", "(value{0})");
+	string curriedMethodCallsInReverse = string.Join("", Enumerable.Range(1, i).Reverse().Select(k => string.Format("(value{0})",k)));
+	string inputCollection = formatText(", ", "in{0}");
+	string arrayDeclarationTypes = formatText(", ", "int");
+	#>
+
+        [Fact]
+        public void Curry<#=i#>Params_Should_Match()
+        {
+            // Arrange
+            int <#=variableInitialization#>;
+
+            Func<<#=arrayDeclarationTypes#>, int[]> createArray = (<#=inputCollection#>) => new int[] { <#=inputCollection#> };
+            var expected = createArray(<#=inputForNonCurryFunction#>);
+
+            // Act
+            var arrayFromCurry = createArray.Curry();
+            var fromCurriedFunction = arrayFromCurry<#=curriedMethodCalls#>;
+
+            // Assert
+            Assert.Equal(expected, fromCurriedFunction);
+        }
+
+        [Fact]
+        public void Curry<#=i#>Params_Should_Not_Match_When_Sequence_Changed()
+        {
+            // Arrange
+            int <#=variableInitialization#>;
+
+            Func<<#=arrayDeclarationTypes#>, int[]> createArray = (<#=inputCollection#>) => new int[] { <#=inputCollection#> };
+            var expected = createArray(<#=inputForNonCurryFunction#>);
+
+            // Act
+            var arrayFromCurry = createArray.Curry();
+            var fromCurriedFunction = arrayFromCurry<#=curriedMethodCallsInReverse#>;
+
+            // Assert
+            Assert.NotEqual(expected, fromCurriedFunction);
+            Assert.Equal(expected, fromCurriedFunction.Reverse());
+        }
+	<# } #>}
+}

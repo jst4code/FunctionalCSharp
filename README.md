@@ -1,3 +1,9 @@
-# Functional Programming Constructs in CSharp
+# Functional Programming Constructs in CSharp #
 
-- Add Functional programming reusable components for C#
+## ToDo Items ##
+
+- [ ] CurryForAction
+- [ ] CurryRight
+- [ ] CurryRightForAction
+- [ ] Partial
+- [ ] PartialRight
