@@ -5,17 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Curry\CurryFunctions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CurryFunctions.tt</DependentUpon>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Curry\CurryFunctions.tt">
+    <None Update="Curry\CurryActionExtensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CurryFunctions.cs</LastGenOutput>
+      <LastGenOutput>CurryActionExtensions.cs</LastGenOutput>
+    </None>
+    <None Update="Curry\CurryFuncExtensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CurryFuncExtensions.cs</LastGenOutput>
+    </None>
+    <None Update="Curry\CurryRightActionExtensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CurryRightActionExtensions.cs</LastGenOutput>
+    </None>
+    <None Update="Curry\CurryRightFuncExtensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CurryRightFuncExtensions.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -24,10 +28,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Curry\CurryFunctions.cs">
+    <Compile Update="Curry\CurryActionExtensions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>CurryFunctions.tt</DependentUpon>
+      <DependentUpon>CurryActionExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Curry\CurryFuncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CurryFuncExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Curry\CurryRightActionExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CurryRightActionExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Curry\CurryRightFuncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CurryRightFuncExtensions.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

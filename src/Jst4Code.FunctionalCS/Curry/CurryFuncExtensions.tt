@@ -6,7 +6,7 @@
 <#@ output extension=".cs" #>
 <# 
 string namespaceToUse = "Jst4Code.FunctionalCS";
-string staticClassName = "CurryFunctionExtensions"; 
+string staticClassName = "CurryFuncExtensions";
 int funcVariations = 15;
 #>
 using System;

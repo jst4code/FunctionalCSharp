@@ -26,9 +26,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Curry\CurryActionExtensionMethodTests.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CurryActionExtensionMethodTests.cs</LastGenOutput>
+    </None>
     <None Update="Curry\CurryFunctionExtensionMethodTests.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CurryFunctionExtensionMethodTests.cs</LastGenOutput>
+    </None>
+    <None Update="Curry\CurryRightActionExtensionMethodTests.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CurryRightActionExtensionMethodTests.cs</LastGenOutput>
+    </None>
+    <None Update="Curry\CurryRightFunctionExtensionMethodTests.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CurryRightFunctionExtensionMethodTests.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -37,10 +49,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Curry\CurryActionExtensionMethodTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CurryActionExtensionMethodTests.tt</DependentUpon>
+    </Compile>
     <Compile Update="Curry\CurryFunctionExtensionMethodTests.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>CurryFunctionExtensionMethodTests.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Curry\CurryRightActionExtensionMethodTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CurryRightActionExtensionMethodTests.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Curry\CurryRightFunctionExtensionMethodTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CurryRightFunctionExtensionMethodTests.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
