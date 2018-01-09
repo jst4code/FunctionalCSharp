@@ -2,8 +2,8 @@
 
 ## ToDo Items ##
 
-- [ ] CurryForAction
-- [ ] CurryRight
-- [ ] CurryRightForAction
-- [ ] Partial
+- [x] CurryForAction
+- [x] CurryRight
+- [x] CurryRightForAction
+- [x] Partial
 - [ ] PartialRight

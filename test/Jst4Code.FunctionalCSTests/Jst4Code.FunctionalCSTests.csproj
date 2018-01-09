@@ -42,6 +42,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CurryRightFunctionExtensionMethodTests.cs</LastGenOutput>
     </None>
+    <None Update="Partial\PartialFuncExtensionMethodsTests.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PartialFuncExtensionMethodsTests.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -68,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>CurryRightFunctionExtensionMethodTests.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Partial\PartialFuncExtensionMethodsTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PartialFuncExtensionMethodsTests.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

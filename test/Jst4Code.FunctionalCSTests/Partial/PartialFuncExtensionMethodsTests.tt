@@ -1,0 +1,96 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<# 
+int funcVariations = 15;
+#>
+using Jst4Code.FunctionalCS;
+using System;
+using System.Linq;
+using Xunit;
+
+namespace Jst4Code.FunctionalCSTests.Partial
+{
+	public class PartialFuncExtensionMethodTests
+	{
+	<# 
+	for(int i = 2; i<funcVariations + 2; i++) { 
+	Func<string, string, string> formatText = (separater, prifix) =>  string.Join(separater, Enumerable.Range(1, i).Select(k => string.Format(prifix,k))); 
+	string variableInitialization = formatText(", ", "value{0} = {0}");
+	string inputForNonPartialFunction = formatText(", ", "value{0}");
+	string partialMethodCalls = formatText(", ", "value{0}");
+	string partialMethodCallsInReverse = string.Join(", ", Enumerable.Range(1, i).Reverse().Select(k => string.Format("(value{0})",k)));
+	string inputCollection = formatText(", ", "in{0}");
+	string arrayDeclarationTypes = formatText(", ", "int");
+	#>
+
+		#region Partial<<#= formatText(", ", "T{0}") #>, TResult>
+
+		#region With correct Sequence
+		<#
+		for(int j = 1; j<i; j++) { 
+		string partialFunctionInput = string.Join(", ", Enumerable.Range(1, i-j).Select(k => string.Format("value{0}", k)));
+		string partialMethodInputs = string.Join(", ", Enumerable.Range(1, i).Skip(i-j).Select(k => string.Format("value{0}", k)));
+
+		string partialMethodInputsReverse = string.Join(", ", Enumerable.Range(1, i-j).Reverse().Select(k => string.Format("value{0}", k)));
+		string partialFunctionInputReverse = string.Join(", ", Enumerable.Range(1, i).Skip(i-j).Reverse().Select(k => string.Format("value{0}", k)));
+		#>
+
+        [Fact]
+        public void Partial<#=i#>Params_With<#=i-j#>Input_Should_Match()
+        {
+            // Arrange
+            int <#=variableInitialization#>;
+
+            Func<<#=arrayDeclarationTypes#>, int[]> createArray = (<#=inputCollection#>) => new int[] { <#=inputCollection#> };
+            var expected = createArray(<#=inputForNonPartialFunction#>);
+
+            // Act
+            var arrayFromPartial = createArray.Partial(<#=partialFunctionInput#>);
+            var fromPartialFunction = arrayFromPartial(<#=partialMethodInputs#>);
+
+            // Assert
+            Assert.Equal(expected, fromPartialFunction);
+        }
+		<# } #>
+
+		#endregion
+
+		#region With reverted Sequence
+		<#
+		for(int j = 1; j<i; j++) { 
+		string partialFunctionInput = string.Join(", ", Enumerable.Range(1, i-j).Select(k => string.Format("value{0}", k)));
+		string partialMethodInputs = string.Join(", ", Enumerable.Range(1, i).Skip(i-j).Select(k => string.Format("value{0}", k)));
+
+		string partialMethodInputsReverse = string.Join(", ", Enumerable.Range(1, i-j).Reverse().Select(k => string.Format("value{0}", k)));
+		string partialFunctionInputReverse = string.Join(", ", Enumerable.Range(1, i).Skip(i-j).Reverse().Select(k => string.Format("value{0}", k)));
+		#>
+
+        [Fact]
+        public void Partial<#=i#>Params_With<#=i-j#>Input_Should_Not_Match_When_Sequence_Changed()
+        {
+            // Arrange
+            int <#=variableInitialization#>;
+
+            Func<<#=arrayDeclarationTypes#>, int[]> createArray = (<#=inputCollection#>) => new int[] { <#=inputCollection#> };
+            var expected = createArray(<#=inputForNonPartialFunction#>);
+
+            // Act
+            var arrayFromPartial = createArray.Partial(<#=partialFunctionInputReverse#>);
+            var fromPartialFunction = arrayFromPartial(<#=partialMethodInputsReverse#>);
+
+            // Assert
+            Assert.NotEqual(expected, fromPartialFunction);
+            Assert.Equal(expected.Reverse(), fromPartialFunction);
+        }
+		<# } #>
+
+		#endregion
+
+		#endregion
+		<# } #>	
+	}
+}
