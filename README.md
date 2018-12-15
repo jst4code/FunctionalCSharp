@@ -2,8 +2,17 @@
 
 ## ToDo Items ##
 
-- [x] CurryForAction
-- [x] CurryRight
-- [x] CurryRightForAction
+- [x] Curry
+  - [x] CurryAction
+  - [x] CurryRightAction
+  - [x] CurryFunc
+  - [x] CurryRightFunc
 - [x] Partial
-- [ ] PartialRight
+  - [x] PartialAction
+  - [x] PartialActionRight
+  - [x] PartialFunc
+  - [x] PartialFuncRight
+- [ ] Option<T>
+- [ ] Either<L,R>
+- [ ] Memoize
+- [ ] Result

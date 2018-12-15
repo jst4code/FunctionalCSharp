@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
@@ -21,9 +21,24 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CurryRightFuncExtensions.cs</LastGenOutput>
     </None>
+    <None Update="Partial\PartialActionExtensions.tt">
+      <CustomToolNamespace>TextTemplatingFileGenerator</CustomToolNamespace>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PartialActionExtensions.cs</LastGenOutput>
+    </None>
     <None Update="Partial\PartialFuncExtensions.tt">
+      <CustomToolNamespace>TextTemplatingFileGenerator</CustomToolNamespace>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PartialFuncExtensions.cs</LastGenOutput>
+    </None>
+    <None Update="Partial\PartialActionExtensions.Right.tt">
+      <CustomToolNamespace>TextTemplatingFileGenerator</CustomToolNamespace>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PartialActionExtensions.Right.cs</LastGenOutput>
+    </None>
+    <None Update="Partial\PartialFuncExtensions.Right.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PartialFuncExtensions.Right.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -52,10 +67,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CurryRightFuncExtensions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Partial\PartialActionExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PartialActionExtensions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Partial\PartialFuncExtensions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>PartialFuncExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Partial\PartialActionExtensions.Right.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PartialActionExtensions.Right.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Partial\PartialFuncExtensions.Right.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PartialFuncExtensions.Right.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
