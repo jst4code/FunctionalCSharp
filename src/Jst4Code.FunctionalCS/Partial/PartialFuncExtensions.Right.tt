@@ -10,6 +10,7 @@ string staticClassName = "PartialFuncExtensions";
 int funcVariations = 15;
 #>
 using System;
+using System.Diagnostics.Contracts;
 
 namespace <#= namespaceToUse #>
 {
@@ -37,6 +38,7 @@ string inputGenericTypes = formatText(", ", "T");
         /// <param name="value<#= k #>">parameter <#= k #> of type T<#= k #></param>
 <# } #>
         /// <returns>function of type (<#= resultMethodInputs #>) -> TResult (with <#= j #> less parameter)</returns>
+        [Pure]
         public static Func<<#= resultGenericTypes #>, TResult> PartialRight<<#= formatText(", ", "T") #>, TResult>(
             this Func<<#= formatText(", ", "T") #>, TResult> function, <#= partialFunctionInput #>) =>
                 (<#= partialMethodInputs #>) => function(<#= functionInput #>);

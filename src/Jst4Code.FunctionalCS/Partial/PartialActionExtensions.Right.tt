@@ -10,16 +10,17 @@ string staticClassName = "PartialActionExtensions";
 int funcVariations = 15;
 #>
 using System; 
+using System.Diagnostics.Contracts;
 
 namespace <#= namespaceToUse #>
 {
-	public static partial class <#= staticClassName #>
-	{<# 
-	for(int i = 2; i<funcVariations + 2; i++) { 
-	Func<string, string, string> formatText = (separater, prifix) =>  string.Join(separater, Enumerable.Range(1, i).Select(k => $"{prifix}{k}")); 
-	string functionInput = formatText(", ", "value");#>
+    public static partial class <#= staticClassName #>
+    {<# 
+    for(int i = 2; i<funcVariations + 2; i++) { 
+    Func<string, string, string> formatText = (separater, prifix) =>  string.Join(separater, Enumerable.Range(1, i).Select(k => $"{prifix}{k}")); 
+    string functionInput = formatText(", ", "value");#>
 
-		#region PartialRight<<#= formatText(", ", "T") #>>
+        #region PartialRight<<#= formatText(", ", "T") #>>
 <#
 for(int j = 1; j<i; j++) { 
 string partialFunctionInput = string.Join(", ", Enumerable.Range(1, i).Skip(i-j).Reverse().Select(k => string.Format("T{0} value{0}", k)));
@@ -37,12 +38,13 @@ string inputGenericTypes = formatText(", ", "T");
         /// <param name="value<#= k #>">parameter <#= k #> of type T<#= k #></param>
 <# } #>
         /// <returns>function of type (<#= resultMethodInputs #>) -> void (with <#= j #> less parameter)</returns>
+        [Pure]
         public static Action<<#= resultGenericTypes #>> PartialRight<<#= formatText(", ", "T") #>>(
             this Action<<#= formatText(", ", "T") #>> action, <#= partialFunctionInput #>) =>
                 (<#= partialMethodInputs #>) => action(<#= functionInput #>);
-		<# } #>
+        <# } #>
 
-		#endregion
-		<# } #>
-	}
+        #endregion
+        <# } #>
+    }
 }

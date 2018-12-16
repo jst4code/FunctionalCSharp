@@ -19,8 +19,8 @@ namespace <#= namespaceToUse #>
     for(int i = 2; i<funcVariations + 2; i++) { 
     Func<string, string, string> formatText = (separater, prifix) =>  string.Join(separater, Enumerable.Range(1, i).Select(k => $"{prifix}{k}")); 
     string functionInput = formatText(", ", "value");
-    string functionChain = formatText(" => ", "value");
-    string functionAggregationResult = Enumerable.Range(1, i).Reverse().Skip(1).Aggregate($"Action<T{i}>", (input, current) => $"Func<T{current}, {input}>");
+    string functionChain = string.Join(" => ", Enumerable.Range(1, i).Reverse().Select(k => $"value{k}"));
+    string functionAggregationResult = Enumerable.Range(1, i).Skip(1).Aggregate($"Action<T1>", (input, current) => $"Func<T{current}, {input}>");
     #>
     
         /// <summary>
@@ -28,7 +28,7 @@ namespace <#= namespaceToUse #>
         /// to <#= functionChain #> => { }
         /// </summary>
         [Pure]
-        public static <#= functionAggregationResult #> Curry<<#= formatText(", ", "T") #>>(
+        public static <#= functionAggregationResult #> CurryRight<<#= formatText(", ", "T") #>>(
             this Action<<#= formatText(", ", "T") #>> action) =>
                 <#= functionChain #> => action(<#= functionInput #>);
     <# } #>}

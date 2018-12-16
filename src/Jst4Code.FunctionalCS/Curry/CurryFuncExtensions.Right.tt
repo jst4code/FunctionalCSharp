@@ -6,7 +6,7 @@
 <#@ output extension=".cs" #>
 <# 
 string namespaceToUse = "Jst4Code.FunctionalCS";
-string staticClassName = "CurryActionExtensions";
+string staticClassName = "CurryFuncExtensions";
 int funcVariations = 15;
 #>
 using System;
@@ -19,17 +19,17 @@ namespace <#= namespaceToUse #>
     for(int i = 2; i<funcVariations + 2; i++) { 
     Func<string, string, string> formatText = (separater, prifix) =>  string.Join(separater, Enumerable.Range(1, i).Select(k => $"{prifix}{k}")); 
     string functionInput = formatText(", ", "value");
-    string functionChain = formatText(" => ", "value");
-    string functionAggregationResult = Enumerable.Range(1, i).Reverse().Skip(1).Aggregate($"Action<T{i}>", (input, current) => $"Func<T{current}, {input}>");
+    string functionChain = string.Join(" => ", Enumerable.Range(1, i).Reverse().Select(k => $"value{k}"));
+    string functionAggregationResult = Enumerable.Range(1, i).Aggregate("TResult", (input, current) => $"Func<T{current}, {input}>");
     #>
     
         /// <summary>
-        /// Transform (<#= functionInput #>) => { }
-        /// to <#= functionChain #> => { }
+        /// Transform (<#= functionInput #>) => result
+        /// to <#= functionChain #> => result
         /// </summary>
         [Pure]
-        public static <#= functionAggregationResult #> Curry<<#= formatText(", ", "T") #>>(
-            this Action<<#= formatText(", ", "T") #>> action) =>
-                <#= functionChain #> => action(<#= functionInput #>);
+        public static <#= functionAggregationResult #> CurryRight<<#= formatText(", ", "T") #>, TResult>(
+            this Func<<#= formatText(", ", "T") #>, TResult> function) =>
+                <#= functionChain #> => function(<#= functionInput #>);
     <# } #>}
 }

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,13 +13,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CurryFuncExtensions.cs</LastGenOutput>
     </None>
-    <None Update="Curry\CurryRightActionExtensions.tt">
+    <None Update="Curry\CurryActionExtensions.Right.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CurryRightActionExtensions.cs</LastGenOutput>
+      <LastGenOutput>CurryActionExtensions.Right.cs</LastGenOutput>
     </None>
-    <None Update="Curry\CurryRightFuncExtensions.tt">
+    <None Update="Curry\CurryFuncExtensions.Right.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CurryRightFuncExtensions.cs</LastGenOutput>
+      <LastGenOutput>CurryFuncExtensions.Right.cs</LastGenOutput>
     </None>
     <None Update="Partial\PartialActionExtensions.tt">
       <CustomToolNamespace>TextTemplatingFileGenerator</CustomToolNamespace>
@@ -57,15 +57,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CurryFuncExtensions.tt</DependentUpon>
     </Compile>
-    <Compile Update="Curry\CurryRightActionExtensions.cs">
+    <Compile Update="Curry\CurryActionExtensions.Right.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>CurryRightActionExtensions.tt</DependentUpon>
+      <DependentUpon>CurryActionExtensions.Right.tt</DependentUpon>
     </Compile>
-    <Compile Update="Curry\CurryRightFuncExtensions.cs">
+    <Compile Update="Curry\CurryFuncExtensions.Right.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>CurryRightFuncExtensions.tt</DependentUpon>
+      <DependentUpon>CurryFuncExtensions.Right.tt</DependentUpon>
     </Compile>
     <Compile Update="Partial\PartialActionExtensions.cs">
       <DesignTime>True</DesignTime>
