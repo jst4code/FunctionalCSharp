@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
-
-namespace Jst4Code.Monads
+﻿namespace Jst4Code.Monads
 {
     public abstract class Either<TLeft, TRight>
     {

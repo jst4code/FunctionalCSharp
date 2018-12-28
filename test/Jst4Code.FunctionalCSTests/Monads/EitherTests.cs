@@ -7,6 +7,10 @@ namespace Jst4Code.FunctionalCSTests.Monads
 {
     public class EitherTests
     {
+        Func<string, int> parse = int.Parse; // string -> int
+        Func<int, double> convert = Convert.ToDouble; // int -> double
+        Func<double, double> sqrt = Math.Sqrt; // double -> double
+
         [Fact]
         public void Should_select_lfet()
         {

@@ -17,16 +17,18 @@ namespace Jst4Code.Monads
                 : (TLeft)(Left<TLeft, TRight>)either;
 
         public static TRight Reduce<TLeft, TRight>(
-            this Either<TLeft, TRight> either, Func<TLeft, TRight> map) =>
-            either is Left<TLeft, TRight> left
-                ? map(left)
-                : (Right<TLeft, TRight>)either;
+            this Either<TLeft, TRight> either, 
+            Func<TLeft, TRight> map) =>
+                either is Left<TLeft, TRight> left
+                    ? map(left)
+                    : (Right<TLeft, TRight>)either;
 
         public static Either<TLeft, TRight> Reduce<TLeft, TRight>(
-            this Either<TLeft, TRight> either, Func<TLeft, TRight> map,
+            this Either<TLeft, TRight> either, 
+            Func<TLeft, TRight> map,
             Func<TLeft, bool> when) =>
-            either is Left<TLeft, TRight> bound && when(bound)
-                ? (Either<TLeft, TRight>)map(bound)
-                : either;
+                either is Left<TLeft, TRight> bound && when(bound)
+                    ? (Either<TLeft, TRight>)map(bound)
+                    : either;
     }
 }

@@ -11,6 +11,10 @@ namespace Jst4Code.FunctionalCSTests.Monads
 {
     public class OptionTests
     {
+        Func<string, int> parse = int.Parse; // string -> int
+        Func<int, double> convert = Convert.ToDouble; // int -> double
+        Func<double, double> sqrt = Math.Sqrt; // double -> double
+
         [Fact]
         public void Should_implicitly_typecast_to_ToOptional()
         {
@@ -47,6 +51,20 @@ namespace Jst4Code.FunctionalCSTests.Monads
                 .Reduce(Enumerable.Empty<int>());
 
             collection.Count().Should().Be(0);
+        }
+
+        [Theory]
+        [InlineData("9", 3)]
+        [InlineData(null, 0)]
+        public void Should_be_able_to_chain_with_map(string input, double expected)
+        {
+            Option<string> val = input;
+            var result = val
+                .Map(parse)
+                .Map(convert)
+                .Map(sqrt)
+                .Reduce(0);
+            result.Should().Be(expected);
         }
     }
 }
