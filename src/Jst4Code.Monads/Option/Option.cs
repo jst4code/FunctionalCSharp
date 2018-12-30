@@ -2,8 +2,8 @@
 {
     public abstract class Option<T>
     {
-        public static implicit operator Option<T>(T value) 
-            => value == null 
+        public static implicit operator Option<T>(T value)
+            => value == null
                 ? new None<T>()
                 : (Option<T>)new Some<T>(value);
 
@@ -16,17 +16,13 @@
         private T Content { get; }
 
         public Some(T content)
-        {
-            this.Content = content;
-        }
+            => Content = content;
 
-        public static implicit operator T(Some<T> value) =>
-            value.Content;
+        public static implicit operator T(Some<T> value)
+            => value.Content;
     }
 
-    public class None<T> : Option<T>
-    {
-    }
+    public class None<T> : Option<T> { }
 
     public class None
     {
