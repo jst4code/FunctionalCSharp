@@ -1,13 +1,13 @@
 ﻿using Jst4Code.FunctionalCS;
 using System;
 using System.Linq;
-using Xunit;
+using NUnit.Framework;
 
 namespace Jst4Code.FunctionalCSTests.Curry
 {
 	public class CurryFunctionExtensionMethodTests
 	{
-        [Fact]
+        [Test]
         public void Curry2Params_Should_Match()
         {
             // Arrange
@@ -21,10 +21,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry2Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -38,11 +38,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry3Params_Should_Match()
         {
             // Arrange
@@ -56,10 +56,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry3Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -73,11 +73,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry4Params_Should_Match()
         {
             // Arrange
@@ -91,10 +91,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry4Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -108,11 +108,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry5Params_Should_Match()
         {
             // Arrange
@@ -126,10 +126,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry5Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -143,11 +143,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry6Params_Should_Match()
         {
             // Arrange
@@ -161,10 +161,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry6Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -178,11 +178,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry7Params_Should_Match()
         {
             // Arrange
@@ -196,10 +196,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry7Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -213,11 +213,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry8Params_Should_Match()
         {
             // Arrange
@@ -231,10 +231,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry8Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -248,11 +248,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry9Params_Should_Match()
         {
             // Arrange
@@ -266,10 +266,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry9Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -283,11 +283,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry10Params_Should_Match()
         {
             // Arrange
@@ -301,10 +301,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9)(value10);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry10Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -318,11 +318,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value10)(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry11Params_Should_Match()
         {
             // Arrange
@@ -336,10 +336,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9)(value10)(value11);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry11Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -353,11 +353,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value11)(value10)(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry12Params_Should_Match()
         {
             // Arrange
@@ -371,10 +371,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9)(value10)(value11)(value12);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry12Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -388,11 +388,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value12)(value11)(value10)(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry13Params_Should_Match()
         {
             // Arrange
@@ -406,10 +406,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9)(value10)(value11)(value12)(value13);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry13Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -423,11 +423,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value13)(value12)(value11)(value10)(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry14Params_Should_Match()
         {
             // Arrange
@@ -441,10 +441,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9)(value10)(value11)(value12)(value13)(value14);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry14Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -458,11 +458,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value14)(value13)(value12)(value11)(value10)(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry15Params_Should_Match()
         {
             // Arrange
@@ -476,10 +476,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9)(value10)(value11)(value12)(value13)(value14)(value15);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry15Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -493,11 +493,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value15)(value14)(value13)(value12)(value11)(value10)(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry16Params_Should_Match()
         {
             // Arrange
@@ -511,10 +511,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value1)(value2)(value3)(value4)(value5)(value6)(value7)(value8)(value9)(value10)(value11)(value12)(value13)(value14)(value15)(value16);
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry16Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -528,8 +528,8 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry(value16)(value15)(value14)(value13)(value12)(value11)(value10)(value9)(value8)(value7)(value6)(value5)(value4)(value3)(value2)(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	}
 }

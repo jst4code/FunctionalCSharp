@@ -14,6 +14,9 @@ namespace Jst4Code
 
         public static implicit operator Result<T>(None obj)
             => new NoneResult<T>();
+
+        public static implicit operator Result<T>(Try<T> @try)
+            => @try.Try();
     }
 
     public class ExceptionResult<T> : Result<T>
@@ -44,31 +47,11 @@ namespace Jst4Code
 
     public static class ResultAdapters
     {
-        public static Result<TOut> Try<TIn, TOut>(
-            this TIn source,
-            Func<TIn, TOut> select)
+        public static void IfSuccess<T>(this Result<T> source, Action<T> toDo)
         {
-            try
+            if (source is ValueResult<T> result)
             {
-                return select(source);
-            }
-            catch (Exception ex)
-            {
-                return ex;
-            }
-        }
-
-        public static Result<TOut> Try<TIn, TOut>(
-            this Result<TIn> source,
-            Func<TIn, TOut> select)
-        {
-            switch (source)
-            {
-                case ExceptionResult<TIn> ex: return (Result<TOut>)(Exception)ex;
-                case ValueResult<TIn> val: return Try((TIn)val, select);
-                case NoneResult<TIn> _:
-                default:
-                    return new NoneResult<TOut>();
+                toDo(result);
             }
         }
 
@@ -79,11 +62,26 @@ namespace Jst4Code
                     ? whenNoneOrFaulted
                     : (ValueResult<TResult>)result;
 
-        public static Result<TResult> Reduce<TResult>(
+        public static Result<TResult> OnException<TResult>(
             this Result<TResult> result,
                 TResult mapValue,
                 Func<Exception, bool> when) =>
                     result is ExceptionResult<TResult> exceptionResult && when(exceptionResult)
+                        ? mapValue
+                        : result;
+
+        public static Result<TResult> OnException<TResult>(
+            this Result<TResult> result,
+                Func<Exception, TResult> mapValue,
+                Func<Exception, bool> when) =>
+                    result is ExceptionResult<TResult> exceptionResult && when(exceptionResult)
+                        ? mapValue(exceptionResult)
+                        : result;
+
+        public static Result<TResult> OnNone<TResult>(
+            this Result<TResult> result,
+                TResult mapValue)
+                    => result is NoneResult<TResult> exceptionResult
                         ? mapValue
                         : result;
 
@@ -101,13 +99,4 @@ namespace Jst4Code
             }
         }
     }
-
-    public static class ResultAdaptersAsync
-    {
-        public static async Task<Result<TOut>> TryAsync<TIn, TOut>(
-            this TIn source,
-            Func<TIn, TOut> select) 
-                => await Task.Factory.StartNew(() => source.Try(select));
-    }
-
 }

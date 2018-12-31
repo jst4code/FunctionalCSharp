@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace Jst4Code.FunctionalCSTests.Monads
 {
@@ -15,21 +15,21 @@ namespace Jst4Code.FunctionalCSTests.Monads
         Func<int, double> convert = Convert.ToDouble; // int -> double
         Func<double, double> sqrt = Math.Sqrt; // double -> double
 
-        [Fact]
+        [Test]
         public void Should_implicitly_typecast_to_ToOptional()
         {
             Option<string> val = "hello world";
             val.Reduce(string.Empty).Should().Be("hello world");
         }
 
-        [Fact]
+        [Test]
         public void Should_implicitly_typecast_null_to_ToOptional()
         {
             Option<string> val = null;
             val.Reduce("nothing").Should().Be("nothing");
         }
 
-        [Fact]
+        [Test]
         public void Should_be_able_to_chain()
         {
             Option<string> val = "hello";
@@ -41,7 +41,7 @@ namespace Jst4Code.FunctionalCSTests.Monads
             collection.Count().Should().Be(5);
         }
 
-        [Fact]
+        [Test]
         public void Should_be_able_to_chain_null()
         {
             Option<string> val = null;
@@ -53,9 +53,9 @@ namespace Jst4Code.FunctionalCSTests.Monads
             collection.Count().Should().Be(0);
         }
 
-        [Theory]
-        [InlineData("9", 3)]
-        [InlineData(null, 0)]
+        
+        [TestCase("9", 3)]
+        [TestCase(null, 0)]
         public void Should_be_able_to_chain_with_map(string input, double expected)
         {
             Option<string> val = input;

@@ -24,6 +24,7 @@ namespace Jst4Code.Monads
             Func<T> whenNone)
                 => option is Some<T> some ? (T)some : whenNone();
 
-        public static Option<T> AsOption<T>(this T input) => (Option<T>)input;
+        public static Option<T> AsOption<T>(this T input) 
+            => (Option<T>)input;
     }
 }

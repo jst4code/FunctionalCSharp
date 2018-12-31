@@ -1,7 +1,7 @@
 ﻿using Jst4Code.FunctionalCS;
 using System;
 using System.Linq;
-using Xunit;
+using NUnit.Framework;
 
 namespace Jst4Code.FunctionalCSTests.Partial
 {
@@ -12,7 +12,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial2Params_With1Input_Should_Match()
         {
             // Arrange
@@ -26,14 +26,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial2Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -47,8 +47,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -59,7 +59,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial3Params_With2Input_Should_Match()
         {
             // Arrange
@@ -73,10 +73,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial3Params_With1Input_Should_Match()
         {
             // Arrange
@@ -90,14 +90,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial3Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -111,11 +111,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial3Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -129,8 +129,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -141,7 +141,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial4Params_With3Input_Should_Match()
         {
             // Arrange
@@ -155,10 +155,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial4Params_With2Input_Should_Match()
         {
             // Arrange
@@ -172,10 +172,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial4Params_With1Input_Should_Match()
         {
             // Arrange
@@ -189,14 +189,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial4Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -210,11 +210,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial4Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -228,11 +228,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial4Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -246,8 +246,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -258,7 +258,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With4Input_Should_Match()
         {
             // Arrange
@@ -272,10 +272,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With3Input_Should_Match()
         {
             // Arrange
@@ -289,10 +289,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With2Input_Should_Match()
         {
             // Arrange
@@ -306,10 +306,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With1Input_Should_Match()
         {
             // Arrange
@@ -323,14 +323,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -344,11 +344,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -362,11 +362,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -380,11 +380,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial5Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -398,8 +398,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -410,7 +410,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With5Input_Should_Match()
         {
             // Arrange
@@ -424,10 +424,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With4Input_Should_Match()
         {
             // Arrange
@@ -441,10 +441,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With3Input_Should_Match()
         {
             // Arrange
@@ -458,10 +458,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With2Input_Should_Match()
         {
             // Arrange
@@ -475,10 +475,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With1Input_Should_Match()
         {
             // Arrange
@@ -492,14 +492,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -513,11 +513,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -531,11 +531,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -549,11 +549,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -567,11 +567,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial6Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -585,8 +585,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -597,7 +597,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With6Input_Should_Match()
         {
             // Arrange
@@ -611,10 +611,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With5Input_Should_Match()
         {
             // Arrange
@@ -628,10 +628,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With4Input_Should_Match()
         {
             // Arrange
@@ -645,10 +645,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With3Input_Should_Match()
         {
             // Arrange
@@ -662,10 +662,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With2Input_Should_Match()
         {
             // Arrange
@@ -679,10 +679,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With1Input_Should_Match()
         {
             // Arrange
@@ -696,14 +696,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -717,11 +717,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -735,11 +735,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -753,11 +753,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -771,11 +771,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -789,11 +789,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial7Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -807,8 +807,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -819,7 +819,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With7Input_Should_Match()
         {
             // Arrange
@@ -833,10 +833,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With6Input_Should_Match()
         {
             // Arrange
@@ -850,10 +850,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With5Input_Should_Match()
         {
             // Arrange
@@ -867,10 +867,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With4Input_Should_Match()
         {
             // Arrange
@@ -884,10 +884,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With3Input_Should_Match()
         {
             // Arrange
@@ -901,10 +901,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With2Input_Should_Match()
         {
             // Arrange
@@ -918,10 +918,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With1Input_Should_Match()
         {
             // Arrange
@@ -935,14 +935,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -956,11 +956,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -974,11 +974,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -992,11 +992,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1010,11 +1010,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1028,11 +1028,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1046,11 +1046,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial8Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1064,8 +1064,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -1076,7 +1076,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With8Input_Should_Match()
         {
             // Arrange
@@ -1090,10 +1090,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With7Input_Should_Match()
         {
             // Arrange
@@ -1107,10 +1107,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With6Input_Should_Match()
         {
             // Arrange
@@ -1124,10 +1124,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With5Input_Should_Match()
         {
             // Arrange
@@ -1141,10 +1141,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With4Input_Should_Match()
         {
             // Arrange
@@ -1158,10 +1158,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With3Input_Should_Match()
         {
             // Arrange
@@ -1175,10 +1175,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With2Input_Should_Match()
         {
             // Arrange
@@ -1192,10 +1192,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With1Input_Should_Match()
         {
             // Arrange
@@ -1209,14 +1209,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1230,11 +1230,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1248,11 +1248,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1266,11 +1266,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1284,11 +1284,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1302,11 +1302,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1320,11 +1320,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1338,11 +1338,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial9Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1356,8 +1356,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -1368,7 +1368,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With9Input_Should_Match()
         {
             // Arrange
@@ -1382,10 +1382,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With8Input_Should_Match()
         {
             // Arrange
@@ -1399,10 +1399,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With7Input_Should_Match()
         {
             // Arrange
@@ -1416,10 +1416,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With6Input_Should_Match()
         {
             // Arrange
@@ -1433,10 +1433,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With5Input_Should_Match()
         {
             // Arrange
@@ -1450,10 +1450,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With4Input_Should_Match()
         {
             // Arrange
@@ -1467,10 +1467,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With3Input_Should_Match()
         {
             // Arrange
@@ -1484,10 +1484,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With2Input_Should_Match()
         {
             // Arrange
@@ -1501,10 +1501,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With1Input_Should_Match()
         {
             // Arrange
@@ -1518,14 +1518,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9, value10);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With9Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1539,11 +1539,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1557,11 +1557,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1575,11 +1575,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1593,11 +1593,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1611,11 +1611,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1629,11 +1629,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1647,11 +1647,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1665,11 +1665,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial10Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1683,8 +1683,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -1695,7 +1695,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With10Input_Should_Match()
         {
             // Arrange
@@ -1709,10 +1709,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With9Input_Should_Match()
         {
             // Arrange
@@ -1726,10 +1726,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With8Input_Should_Match()
         {
             // Arrange
@@ -1743,10 +1743,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With7Input_Should_Match()
         {
             // Arrange
@@ -1760,10 +1760,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With6Input_Should_Match()
         {
             // Arrange
@@ -1777,10 +1777,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With5Input_Should_Match()
         {
             // Arrange
@@ -1794,10 +1794,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With4Input_Should_Match()
         {
             // Arrange
@@ -1811,10 +1811,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With3Input_Should_Match()
         {
             // Arrange
@@ -1828,10 +1828,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With2Input_Should_Match()
         {
             // Arrange
@@ -1845,10 +1845,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With1Input_Should_Match()
         {
             // Arrange
@@ -1862,14 +1862,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9, value10, value11);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With10Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1883,11 +1883,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With9Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1901,11 +1901,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1919,11 +1919,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1937,11 +1937,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1955,11 +1955,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1973,11 +1973,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -1991,11 +1991,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2009,11 +2009,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2027,11 +2027,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial11Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2045,8 +2045,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -2057,7 +2057,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With11Input_Should_Match()
         {
             // Arrange
@@ -2071,10 +2071,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With10Input_Should_Match()
         {
             // Arrange
@@ -2088,10 +2088,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With9Input_Should_Match()
         {
             // Arrange
@@ -2105,10 +2105,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With8Input_Should_Match()
         {
             // Arrange
@@ -2122,10 +2122,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With7Input_Should_Match()
         {
             // Arrange
@@ -2139,10 +2139,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With6Input_Should_Match()
         {
             // Arrange
@@ -2156,10 +2156,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With5Input_Should_Match()
         {
             // Arrange
@@ -2173,10 +2173,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With4Input_Should_Match()
         {
             // Arrange
@@ -2190,10 +2190,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With3Input_Should_Match()
         {
             // Arrange
@@ -2207,10 +2207,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With2Input_Should_Match()
         {
             // Arrange
@@ -2224,10 +2224,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With1Input_Should_Match()
         {
             // Arrange
@@ -2241,14 +2241,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With11Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2262,11 +2262,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With10Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2280,11 +2280,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With9Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2298,11 +2298,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2316,11 +2316,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2334,11 +2334,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2352,11 +2352,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2370,11 +2370,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2388,11 +2388,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2406,11 +2406,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2424,11 +2424,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial12Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2442,8 +2442,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -2454,7 +2454,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With12Input_Should_Match()
         {
             // Arrange
@@ -2468,10 +2468,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With11Input_Should_Match()
         {
             // Arrange
@@ -2485,10 +2485,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With10Input_Should_Match()
         {
             // Arrange
@@ -2502,10 +2502,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With9Input_Should_Match()
         {
             // Arrange
@@ -2519,10 +2519,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With8Input_Should_Match()
         {
             // Arrange
@@ -2536,10 +2536,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With7Input_Should_Match()
         {
             // Arrange
@@ -2553,10 +2553,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With6Input_Should_Match()
         {
             // Arrange
@@ -2570,10 +2570,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With5Input_Should_Match()
         {
             // Arrange
@@ -2587,10 +2587,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With4Input_Should_Match()
         {
             // Arrange
@@ -2604,10 +2604,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With3Input_Should_Match()
         {
             // Arrange
@@ -2621,10 +2621,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With2Input_Should_Match()
         {
             // Arrange
@@ -2638,10 +2638,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With1Input_Should_Match()
         {
             // Arrange
@@ -2655,14 +2655,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With12Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2676,11 +2676,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With11Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2694,11 +2694,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With10Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2712,11 +2712,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With9Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2730,11 +2730,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2748,11 +2748,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2766,11 +2766,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2784,11 +2784,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2802,11 +2802,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2820,11 +2820,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2838,11 +2838,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2856,11 +2856,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial13Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -2874,8 +2874,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -2886,7 +2886,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With13Input_Should_Match()
         {
             // Arrange
@@ -2900,10 +2900,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With12Input_Should_Match()
         {
             // Arrange
@@ -2917,10 +2917,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With11Input_Should_Match()
         {
             // Arrange
@@ -2934,10 +2934,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With10Input_Should_Match()
         {
             // Arrange
@@ -2951,10 +2951,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With9Input_Should_Match()
         {
             // Arrange
@@ -2968,10 +2968,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With8Input_Should_Match()
         {
             // Arrange
@@ -2985,10 +2985,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With7Input_Should_Match()
         {
             // Arrange
@@ -3002,10 +3002,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With6Input_Should_Match()
         {
             // Arrange
@@ -3019,10 +3019,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With5Input_Should_Match()
         {
             // Arrange
@@ -3036,10 +3036,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With4Input_Should_Match()
         {
             // Arrange
@@ -3053,10 +3053,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With3Input_Should_Match()
         {
             // Arrange
@@ -3070,10 +3070,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With2Input_Should_Match()
         {
             // Arrange
@@ -3087,10 +3087,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With1Input_Should_Match()
         {
             // Arrange
@@ -3104,14 +3104,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With13Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3125,11 +3125,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value13, value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With12Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3143,11 +3143,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With11Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3161,11 +3161,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With10Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3179,11 +3179,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With9Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3197,11 +3197,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3215,11 +3215,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3233,11 +3233,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3251,11 +3251,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3269,11 +3269,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3287,11 +3287,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3305,11 +3305,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3323,11 +3323,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial14Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3341,8 +3341,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -3353,7 +3353,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With14Input_Should_Match()
         {
             // Arrange
@@ -3367,10 +3367,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With13Input_Should_Match()
         {
             // Arrange
@@ -3384,10 +3384,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With12Input_Should_Match()
         {
             // Arrange
@@ -3401,10 +3401,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With11Input_Should_Match()
         {
             // Arrange
@@ -3418,10 +3418,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With10Input_Should_Match()
         {
             // Arrange
@@ -3435,10 +3435,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With9Input_Should_Match()
         {
             // Arrange
@@ -3452,10 +3452,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With8Input_Should_Match()
         {
             // Arrange
@@ -3469,10 +3469,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With7Input_Should_Match()
         {
             // Arrange
@@ -3486,10 +3486,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With6Input_Should_Match()
         {
             // Arrange
@@ -3503,10 +3503,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With5Input_Should_Match()
         {
             // Arrange
@@ -3520,10 +3520,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With4Input_Should_Match()
         {
             // Arrange
@@ -3537,10 +3537,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With3Input_Should_Match()
         {
             // Arrange
@@ -3554,10 +3554,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With2Input_Should_Match()
         {
             // Arrange
@@ -3571,10 +3571,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With1Input_Should_Match()
         {
             // Arrange
@@ -3588,14 +3588,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With14Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3609,11 +3609,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value14, value13, value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With13Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3627,11 +3627,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value13, value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With12Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3645,11 +3645,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With11Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3663,11 +3663,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With10Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3681,11 +3681,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With9Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3699,11 +3699,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3717,11 +3717,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3735,11 +3735,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3753,11 +3753,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3771,11 +3771,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3789,11 +3789,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3807,11 +3807,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3825,11 +3825,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial15Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -3843,8 +3843,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion
@@ -3855,7 +3855,7 @@ namespace Jst4Code.FunctionalCSTests.Partial
 
 		#region With correct Sequence
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With15Input_Should_Match()
         {
             // Arrange
@@ -3869,10 +3869,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With14Input_Should_Match()
         {
             // Arrange
@@ -3886,10 +3886,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With13Input_Should_Match()
         {
             // Arrange
@@ -3903,10 +3903,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With12Input_Should_Match()
         {
             // Arrange
@@ -3920,10 +3920,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With11Input_Should_Match()
         {
             // Arrange
@@ -3937,10 +3937,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With10Input_Should_Match()
         {
             // Arrange
@@ -3954,10 +3954,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With9Input_Should_Match()
         {
             // Arrange
@@ -3971,10 +3971,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With8Input_Should_Match()
         {
             // Arrange
@@ -3988,10 +3988,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With7Input_Should_Match()
         {
             // Arrange
@@ -4005,10 +4005,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With6Input_Should_Match()
         {
             // Arrange
@@ -4022,10 +4022,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value8, value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With5Input_Should_Match()
         {
             // Arrange
@@ -4039,10 +4039,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With4Input_Should_Match()
         {
             // Arrange
@@ -4056,10 +4056,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With3Input_Should_Match()
         {
             // Arrange
@@ -4073,10 +4073,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With2Input_Should_Match()
         {
             // Arrange
@@ -4090,10 +4090,10 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With1Input_Should_Match()
         {
             // Arrange
@@ -4107,14 +4107,14 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16);
 
             // Assert
-            Assert.Equal(expected, fromPartialFunction);
+            Assert.AreEqual(expected, fromPartialFunction);
         }
 		
 		#endregion
 
 		#region With reverted Sequence
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With15Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4128,11 +4128,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value15, value14, value13, value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With14Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4146,11 +4146,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value14, value13, value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With13Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4164,11 +4164,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value13, value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With12Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4182,11 +4182,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value12, value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With11Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4200,11 +4200,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value11, value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With10Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4218,11 +4218,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value10, value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With9Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4236,11 +4236,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value9, value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With8Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4254,11 +4254,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value8, value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With7Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4272,11 +4272,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value7, value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With6Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4290,11 +4290,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value6, value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With5Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4308,11 +4308,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value5, value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With4Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4326,11 +4326,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value4, value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With3Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4344,11 +4344,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value3, value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With2Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4362,11 +4362,11 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value2, value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
-        [Fact]
+        [Test]
         public void Partial16Params_With1Input_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -4380,8 +4380,8 @@ namespace Jst4Code.FunctionalCSTests.Partial
             var fromPartialFunction = arrayFromPartial(value1);
 
             // Assert
-            Assert.NotEqual(expected, fromPartialFunction);
-            Assert.Equal(expected.Reverse(), fromPartialFunction);
+            Assert.AreNotEqual(expected, fromPartialFunction);
+            Assert.AreEqual(expected.Reverse(), fromPartialFunction);
         }
 		
 		#endregion

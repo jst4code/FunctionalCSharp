@@ -1,13 +1,13 @@
 ﻿using Jst4Code.FunctionalCS;
 using System;
 using System.Linq;
-using Xunit;
+using NUnit.Framework;
 
 namespace Jst4Code.FunctionalCSTests.Curry
 {
 	public class CurryRightActionExtensionMethodTests
 	{
-        [Fact]
+        [Test]
         public void Curry2Params_Should_Match()
         {
             // Arrange
@@ -26,10 +26,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry2Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -48,11 +48,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry3Params_Should_Match()
         {
             // Arrange
@@ -71,10 +71,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry3Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -93,11 +93,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry4Params_Should_Match()
         {
             // Arrange
@@ -116,10 +116,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry4Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -138,11 +138,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry5Params_Should_Match()
         {
             // Arrange
@@ -161,10 +161,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry5Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -183,11 +183,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry6Params_Should_Match()
         {
             // Arrange
@@ -206,10 +206,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry6Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -228,11 +228,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry7Params_Should_Match()
         {
             // Arrange
@@ -251,10 +251,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry7Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -273,11 +273,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry8Params_Should_Match()
         {
             // Arrange
@@ -296,10 +296,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry8Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -318,11 +318,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry9Params_Should_Match()
         {
             // Arrange
@@ -341,10 +341,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry9Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -363,11 +363,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry10Params_Should_Match()
         {
             // Arrange
@@ -386,10 +386,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry10Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -408,11 +408,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry11Params_Should_Match()
         {
             // Arrange
@@ -431,10 +431,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry11Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -453,11 +453,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry12Params_Should_Match()
         {
             // Arrange
@@ -476,10 +476,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry12Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -498,11 +498,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry13Params_Should_Match()
         {
             // Arrange
@@ -521,10 +521,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry13Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -543,11 +543,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry14Params_Should_Match()
         {
             // Arrange
@@ -566,10 +566,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry14Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -588,11 +588,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry15Params_Should_Match()
         {
             // Arrange
@@ -611,10 +611,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry15Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -633,11 +633,11 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	
-        [Fact]
+        [Test]
         public void Curry16Params_Should_Match()
         {
             // Arrange
@@ -656,10 +656,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.Equal(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection);
         }
 
-        [Fact]
+        [Test]
         public void Curry16Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -678,8 +678,8 @@ namespace Jst4Code.FunctionalCSTests.Curry
 
             // Assert
             Assert.False(expectedCollection == actualCollection);
-            Assert.NotEqual(expectedCollection, actualCollection);
-            Assert.Equal(expectedCollection, actualCollection.Reverse());
+            Assert.AreNotEqual(expectedCollection, actualCollection);
+            Assert.AreEqual(expectedCollection, actualCollection.Reverse());
         }
 	}
 }

@@ -10,7 +10,7 @@ int funcVariations = 15;
 using Jst4Code.FunctionalCS;
 using System;
 using System.Linq;
-using Xunit;
+using NUnit.Framework;
 
 namespace Jst4Code.FunctionalCSTests.Curry
 {
@@ -26,7 +26,7 @@ namespace Jst4Code.FunctionalCSTests.Curry
 	string arrayDeclarationTypes = formatText(", ", "int");
 	#>
 
-        [Fact]
+        [Test]
         public void Curry<#=i#>Params_Should_Match()
         {
             // Arrange
@@ -40,10 +40,10 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry<#=curriedMethodCalls#>;
 
             // Assert
-            Assert.Equal(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction);
         }
 
-        [Fact]
+        [Test]
         public void Curry<#=i#>Params_Should_Not_Match_When_Sequence_Changed()
         {
             // Arrange
@@ -57,8 +57,8 @@ namespace Jst4Code.FunctionalCSTests.Curry
             var fromCurriedFunction = arrayFromCurry<#=curriedMethodCallsInReverse#>;
 
             // Assert
-            Assert.NotEqual(expected, fromCurriedFunction);
-            Assert.Equal(expected, fromCurriedFunction.Reverse());
+            Assert.AreNotEqual(expected, fromCurriedFunction);
+            Assert.AreEqual(expected, fromCurriedFunction.Reverse());
         }
 	<# } #>}
 }

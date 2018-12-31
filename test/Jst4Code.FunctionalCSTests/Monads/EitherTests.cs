@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Jst4Code.Monads;
+using NUnit.Framework;
 using System;
-using Xunit;
 
 namespace Jst4Code.FunctionalCSTests.Monads
 {
@@ -11,7 +11,7 @@ namespace Jst4Code.FunctionalCSTests.Monads
         Func<int, double> convert = Convert.ToDouble; // int -> double
         Func<double, double> sqrt = Math.Sqrt; // double -> double
 
-        [Fact]
+        [Test]
         public void Should_select_lfet()
         {
             Either<Exception, string> either = "hello world";
@@ -20,7 +20,7 @@ namespace Jst4Code.FunctionalCSTests.Monads
                 .Should().Be("hello world");
         }
 
-        [Fact]
+        [Test]
         public void Should_select_exception()
         {
             Either<Exception, string> either = new NotImplementedException();

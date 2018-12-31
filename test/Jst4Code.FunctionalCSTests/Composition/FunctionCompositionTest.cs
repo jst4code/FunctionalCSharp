@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using FluentAssertions;
 using Jst4Code.FunctionalCS.Composition;
-using Xunit;
+using NUnit.Framework;
 
 namespace Jst4Code.FunctionalCSTests.Composition
 {
@@ -16,7 +16,7 @@ namespace Jst4Code.FunctionalCSTests.Composition
         Func<int, double> convert = Convert.ToDouble; // int -> double
         Func<double, double> sqrt = Math.Sqrt; // double -> double
 
-        [Fact]
+        [Test]
         public void Should_execute_Method_after_first_one()
         {
             // Act
@@ -24,7 +24,7 @@ namespace Jst4Code.FunctionalCSTests.Composition
             result.Should().Be("HelloWorld");
         }
 
-        [Fact]
+        [Test]
         public void Should_execute_method_after_first_one_with_different_types()
         {
             Func<string, double> processor = sqrt.After(convert).After(parse);
@@ -32,7 +32,7 @@ namespace Jst4Code.FunctionalCSTests.Composition
             result.Should().Be(2);
         }
 
-        [Fact]
+        [Test]
         public void Should_execute_Method_and_then_the_second_one()
         {
             // Act
@@ -40,7 +40,7 @@ namespace Jst4Code.FunctionalCSTests.Composition
             result.Should().Be("HelloWorld");
         }
 
-        [Fact]
+        [Test]
         public void Should_execute_Method_and_then_the_second_one_with_different_types()
         {
             // Act
@@ -49,7 +49,7 @@ namespace Jst4Code.FunctionalCSTests.Composition
             result.Should().Be(2);
         }
 
-        [Fact]
+        [Test]
         public void Should_pipe_method_in_forward_direction()
         {
             // Act
