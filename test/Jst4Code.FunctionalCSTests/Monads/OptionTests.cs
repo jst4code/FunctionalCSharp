@@ -1,10 +1,6 @@
 ﻿using FluentAssertions;
-using Jst4Code.Monads;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace Jst4Code.FunctionalCSTests.Monads
@@ -18,21 +14,21 @@ namespace Jst4Code.FunctionalCSTests.Monads
         [Test]
         public void Should_implicitly_typecast_to_ToOptional()
         {
-            Option<string> val = "hello world";
+            MayBe<string> val = "hello world";
             val.Reduce(string.Empty).Should().Be("hello world");
         }
 
         [Test]
         public void Should_implicitly_typecast_null_to_ToOptional()
         {
-            Option<string> val = null;
+            MayBe<string> val = null;
             val.Reduce("nothing").Should().Be("nothing");
         }
 
         [Test]
         public void Should_be_able_to_chain()
         {
-            Option<string> val = "hello";
+            MayBe<string> val = "hello";
             var collection = val
                 .Map(i => i.Length)
                 .Map(i => Enumerable.Range(0, i))
@@ -44,7 +40,7 @@ namespace Jst4Code.FunctionalCSTests.Monads
         [Test]
         public void Should_be_able_to_chain_null()
         {
-            Option<string> val = null;
+            MayBe<string> val = null;
             var collection = val
                 .Map(i => i.Length)
                 .Map(i => Enumerable.Range(0, i))
@@ -58,7 +54,7 @@ namespace Jst4Code.FunctionalCSTests.Monads
         [TestCase(null, 0)]
         public void Should_be_able_to_chain_with_map(string input, double expected)
         {
-            Option<string> val = input;
+            MayBe<string> val = input;
             var result = val
                 .Map(parse)
                 .Map(convert)

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jst4Code.FunctionalCSTests"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jst4Code.Monads", "src\Jst4Code.Monads\Jst4Code.Monads.csproj", "{16A62BC3-83AB-40F5-A82A-042D1A997214}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jst4Code.FunctionalExtensions.TestBed", "test\Jst4Code.FunctionalExtensions.TestBed\Jst4Code.FunctionalExtensions.TestBed.csproj", "{27412808-E6B7-4678-8FC7-D26E677EA4A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{16A62BC3-83AB-40F5-A82A-042D1A997214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16A62BC3-83AB-40F5-A82A-042D1A997214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16A62BC3-83AB-40F5-A82A-042D1A997214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27412808-E6B7-4678-8FC7-D26E677EA4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27412808-E6B7-4678-8FC7-D26E677EA4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27412808-E6B7-4678-8FC7-D26E677EA4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27412808-E6B7-4678-8FC7-D26E677EA4A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{81010CC1-8596-4A1D-84A8-15BEC697CEDF} = {A756781C-FAF5-4B45-AB46-B1280134667E}
 		{05A7D048-E06A-40EB-8678-D1A00D71DE87} = {3E2A7BA0-F0D0-43F9-866B-A2B25DD551E6}
 		{16A62BC3-83AB-40F5-A82A-042D1A997214} = {A756781C-FAF5-4B45-AB46-B1280134667E}
+		{27412808-E6B7-4678-8FC7-D26E677EA4A0} = {3E2A7BA0-F0D0-43F9-866B-A2B25DD551E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93288FC2-4DDB-45D0-AC33-1496BA1A9B7A}
