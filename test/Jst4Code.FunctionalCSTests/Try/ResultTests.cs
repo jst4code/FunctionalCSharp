@@ -21,7 +21,7 @@ namespace Jst4Code.FunctionalCSTests
 
             // Act
             double value = result
-                .OnException(-1, ex => ex is ArgumentNullException)
+                .OnException(ex => -1, ex => ex is ArgumentNullException)
                 .OnException(-2, ex => ex is FormatException)
                 .Reduce(0);
 
@@ -42,8 +42,8 @@ namespace Jst4Code.FunctionalCSTests
 
             // Act
             double value = result
-                .OnException(-1, ex => ex is ArgumentNullException)
-                .OnException(-2, ex => ex is FormatException)
+                .OnException<ArgumentNullException>(-1)
+                .OnException<FormatException>(ex => -2)
                 .OnException(ex => (ex as NumericException).ErrorCode, ex => ex is NumericException)
                 .Reduce(0);
 
@@ -51,22 +51,14 @@ namespace Jst4Code.FunctionalCSTests
             value.Should().Be(expected);
         }
 
-        //public static TheoryData<Exception, double> ExceptionTestDataSource
-        //    => new TheoryData<Exception, double> {
-        //            {new ArgumentNullException(), -1  },
-        //            { new FormatException(), -2 },
-        //            { new NumericException(5), 5 },
-        //            { new NumericException(100), 100 }
-        //        };
-
         public static IEnumerable ExceptionTestDataSource
         {
             get
             {
                 yield return new TestCaseData(new ArgumentNullException(), -1);
                 yield return new TestCaseData(new FormatException(), -2);
-                yield return new TestCaseData( new NumericException(5), 5);
-                yield return new TestCaseData( new NumericException(100), 100);
+                yield return new TestCaseData(new NumericException(5), 5);
+                yield return new TestCaseData(new NumericException(100), 100);
             }
         }
     }

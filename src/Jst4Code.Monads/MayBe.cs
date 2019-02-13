@@ -1,8 +1,6 @@
 ﻿namespace Jst4Code
 {
-    public interface IMayBe<T> { }
-
-    public abstract class MayBe<T> : IMayBe<T>
+    public abstract class MayBe<T>
     {
         public bool HasValue { get => this is Some<T>; }
         public bool IsNull { get => this is None<T>; }

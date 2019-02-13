@@ -1,6 +1,6 @@
 ﻿namespace Jst4Code
 {
-    internal class None<T> : Result<T>, IMayBe<T>, IResult<T> { }
+    internal class None<T> : Result<T>{ }
 
     public class None
     {

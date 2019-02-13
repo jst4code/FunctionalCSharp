@@ -12,15 +12,8 @@ namespace Jst4Code
 
         public static TryAsync<A> Memoize<A>(this TryAsync<A> ma)
         {
-            bool run = false;
-            Task<Result<A>> result = Task.FromResult<Result<A>>(None.Value);
-            return new TryAsync<A>(() =>
-            {
-                if (run) return result;
-                result = ma.Try();
-                run = true;
-                return result;
-            });
+            Lazy<Task<Result<A>>> result = new Lazy<Task<Result<A>>>(() => ma.Try());
+            return new TryAsync<A>(() => result.Value);
         }
 
         [Pure]
@@ -71,7 +64,6 @@ namespace Jst4Code
             }
         }
 
-
         [Pure]
         public static async Task<Result<T>> Try<T>(this TryAsync<T> self, Func<T, Task> onSuccess)
         {
@@ -96,16 +88,5 @@ namespace Jst4Code
         [Pure]
         public static TryAsync<B> Map<A, B>(this TryAsync<A> self, Func<A, B> f) =>
            Memoize(async () => await self.Try(f));
-
-        [Pure]
-        public static TryAsync<T> Then<T>(this TryAsync<T> self, Action<T> f) =>
-            Memoize(async () =>
-            {
-                Result<T> result = await self.Try();
-
-                if (result is Some<T> val) f(val);
-
-                return result;
-            });
     }
 }

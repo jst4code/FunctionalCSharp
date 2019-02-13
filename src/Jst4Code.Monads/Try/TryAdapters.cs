@@ -29,7 +29,7 @@ namespace Jst4Code
         public static Try<A> Memoize<A>(this Try<A> ma)
         {
             Lazy<Result<A>> result = new Lazy<Result<A>>(() => ma.Try());
-            return () => result.Value;
+            return new Try<A>(() => result.Value);
         }
 
         [Pure]
@@ -46,29 +46,5 @@ namespace Jst4Code
 
                 return result;
             });
-
-        [Pure]
-        public static Try<U> Use<T, U>(this Try<T> self, Func<T, U> select)
-            where T : IDisposable =>
-            self.Map(x => x.Use(select));
-
-        /// <summary>
-        /// Functional implementation of the using(...) { } pattern
-        /// </summary>
-        /// <param name="disposable">Disposable to use</param>
-        /// <param name="f">Inner map function that uses the disposable value</param>
-        /// <returns>Result of f(disposable)</returns>
-        public static B Use<A, B>(this A disposable, Func<A, B> f)
-            where A : IDisposable
-        {
-            try
-            {
-                return f(disposable);
-            }
-            finally
-            {
-                disposable?.Dispose();
-            }
-        }
     }
 }

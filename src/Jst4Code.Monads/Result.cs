@@ -2,9 +2,7 @@
 
 namespace Jst4Code
 {
-    public interface IResult<T> { }
-
-    public abstract class Result<T> : MayBe<T>, IResult<T>
+    public abstract class Result<T> : MayBe<T>
     {
         public bool IsSuccess { get => HasValue; }
         public bool IsFailure { get => this is Error<T>; }
@@ -20,5 +18,17 @@ namespace Jst4Code
 
         public static implicit operator Result<T>(Try<T> @try)
             => @try.Try();
+
+        public Result<T> OnException<TException>(T mapValue)
+            where TException : Exception
+                => this is Error<T> exceptionResult && ((Exception)exceptionResult) is TException
+                ? mapValue
+                : this;
+
+        public Result<T> OnException<TException>(Func<TException, T> mapValue)
+            where TException : Exception
+                => this is Error<T> exceptionResult && ((Exception)exceptionResult) is TException expectedException
+                ? mapValue(expectedException)
+                : this;
     }
 }

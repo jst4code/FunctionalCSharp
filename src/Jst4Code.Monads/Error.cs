@@ -2,7 +2,7 @@
 
 namespace Jst4Code
 {
-    internal class Error<T> : Result<T>, IResult<T>
+    internal class Error<T> : Result<T>
     {
         private Exception Content { get; }
 
