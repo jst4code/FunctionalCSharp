@@ -20,7 +20,7 @@ namespace Jst4Code.FunctionalCS.Composition
 
         // Input, T, T -> TResult.
         // Output TResult.
-        public static TResult Select<T, TResult>(this T value, Func<T, TResult> function) =>
+        public static TResult Map<T, TResult>(this T value, Func<T, TResult> function) =>
             function(value);
     }
 }

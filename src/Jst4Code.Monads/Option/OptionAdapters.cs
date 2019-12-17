@@ -17,14 +17,14 @@ namespace Jst4Code.Monads
         public static T Reduce<T>(
             this Option<T> option,
             T whenNone)
-                => option is Some<T> some ? (T)some : whenNone;
+                => option is Some<T> some ? some : whenNone;
 
         public static T Reduce<T>(
             this Option<T> option,
             Func<T> whenNone)
-                => option is Some<T> some ? (T)some : whenNone();
+                => option is Some<T> some ? some : whenNone();
 
         public static Option<T> AsOption<T>(this T input) 
-            => (Option<T>)input;
+            => input;
     }
 }

@@ -51,6 +51,28 @@ namespace Jst4Code.FunctionalCSTests
             value.Should().Be(expected);
         }
 
+        [TestCaseSource(nameof(ExceptionTestDataSource))]
+        public void Should_be_able_to_handle_exception_results_using_generics(Exception input, double expected)
+        {
+            // Arrange
+            Result<string> resultInput = input;
+
+            var result = resultInput
+                .Map(int.Parse)
+                .Map(Convert.ToDouble)
+                .Map(Math.Sqrt);
+
+            // Act
+            double value = result
+                .OnException<ArgumentNullException>(-1)
+                .OnException<FormatException>(-2)
+                .OnException<NumericException>(ex => ex.ErrorCode)
+                .Reduce(0);
+
+            // Assert
+            value.Should().Be(expected);
+        }
+
         //public static TheoryData<Exception, double> ExceptionTestDataSource
         //    => new TheoryData<Exception, double> {
         //            {new ArgumentNullException(), -1  },
@@ -65,8 +87,8 @@ namespace Jst4Code.FunctionalCSTests
             {
                 yield return new TestCaseData(new ArgumentNullException(), -1);
                 yield return new TestCaseData(new FormatException(), -2);
-                yield return new TestCaseData( new NumericException(5), 5);
-                yield return new TestCaseData( new NumericException(100), 100);
+                yield return new TestCaseData(new NumericException(5), 5);
+                yield return new TestCaseData(new NumericException(100), 100);
             }
         }
     }
