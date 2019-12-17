@@ -7,7 +7,11 @@ namespace Jst4Code.FunctionalCSTests
 {
     public class TryTests
     {
-        
+        private Func<string, Try<double>> parseAndSqrt = input => input.AsTry()
+                .Map(int.Parse)
+                .Map(Convert.ToDouble)
+                .Map(Math.Sqrt);
+
         [TestCase("9", 3)]
         [TestCase("abc", -2)]
         [TestCase("123456789123456789123456789123456789", 0)]
@@ -24,6 +28,7 @@ namespace Jst4Code.FunctionalCSTests
 
             result.Should().Be(expected);
         }
+
 
         
         [TestCase("9", 3)]

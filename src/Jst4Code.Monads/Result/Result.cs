@@ -1,6 +1,5 @@
 ﻿using Jst4Code.Monads;
 using System;
-using System.Threading.Tasks;
 
 namespace Jst4Code
 {
@@ -17,9 +16,19 @@ namespace Jst4Code
 
         public static implicit operator Result<T>(Try<T> @try)
             => @try.Try();
+
+        public Result<T> OnException<TException>(T defaultValue)
+            where TException : Exception 
+                => this.OnException(defaultValue, ex => ex is TException);
+
+        public Result<T> OnException<TException>(Func<TException, T> mapValue)
+            where TException : Exception
+                => this is ExceptionResult<T> exceptionResult && exceptionResult.Is<TException>()
+                        ? mapValue((Exception)exceptionResult as TException)
+                        : this;
     }
 
-    public class ExceptionResult<T> : Result<T>
+    internal class ExceptionResult<T> : Result<T>
     {
         private Exception Content { get; }
 
@@ -28,9 +37,13 @@ namespace Jst4Code
 
         public static implicit operator Exception(ExceptionResult<T> obj)
             => obj.Content;
+
+        public bool Is<TException>() 
+            where TException : Exception
+                => Content is TException;
     }
 
-    public class ValueResult<T> : Result<T>
+    internal class ValueResult<T> : Result<T>
     {
         private T Content { get; }
 
@@ -41,13 +54,13 @@ namespace Jst4Code
             => obj.Content;
     }
 
-    public class NoneResult<T> : Result<T>
+    internal class NoneResult<T> : Result<T>
     {
     }
 
     public static class ResultAdapters
     {
-        public static void IfSuccess<T>(this Result<T> source, Action<T> toDo)
+        public static void OnSuccess<T>(this Result<T> source, Action<T> toDo)
         {
             if (source is ValueResult<T> result)
             {
@@ -81,22 +94,19 @@ namespace Jst4Code
         public static Result<TResult> OnNone<TResult>(
             this Result<TResult> result,
                 TResult mapValue)
-                    => result is NoneResult<TResult> exceptionResult
+                    => result is NoneResult<TResult>
                         ? mapValue
                         : result;
 
         public static Result<TOut> Map<TIn, TOut>(
             this Result<TIn> source,
-            Func<TIn, TOut> map)
-        {
-            switch (source)
-            {
-                case ExceptionResult<TIn> ex: return (Result<TOut>)(Exception)ex;
-                case ValueResult<TIn> val: return map(val);
-                case NoneResult<TIn> _:
-                default:
-                    return new NoneResult<TOut>();
-            }
-        }
+            Func<TIn, TOut> map) 
+            => source switch
+                {
+                    ExceptionResult<TIn> ex => (Exception)ex,
+                    ValueResult<TIn> val => map(val),
+                    _ => new NoneResult<TOut>(),
+                };
+
     }
 }

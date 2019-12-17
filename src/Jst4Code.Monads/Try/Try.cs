@@ -6,6 +6,10 @@ namespace Jst4Code
 {
     public delegate Result<T> Try<T>();
 
+    // TODO
+    //public delegate Result<TResult> Use<TResult, TDisposable>(TDisposable disposable)
+    //    where TDisposable : IDisposable;
+
     public static class TryAdapters
     {
         /// <summary>
@@ -18,18 +22,25 @@ namespace Jst4Code
         public static Try<A> AsTry<A>(this A v) =>
             () => v;
 
+        public static Try<A> AsTry<A>(this Func<A> func)
+        {
+            return () =>
+               {
+                   Result<A> result = None.Value;
+
+                   try { result = func(); }
+                   catch (Exception ex) { result = ex; }
+
+                   return result;
+               };
+        }
+
         public static Result<T> Try<T>(this Try<T> self)
         {
             if (self == null) return None.Value;
 
-            try
-            {
-                return self();
-            }
-            catch (Exception e)
-            {
-                return e;
-            }
+            try { return self(); }
+            catch (Exception ex) { return ex; }
         }
 
         /// <summary>
@@ -38,8 +49,8 @@ namespace Jst4Code
         public static Try<A> Memo<A>(this Try<A> ma)
         {
             bool run = false;
-            Result<A> result = None.Value
-;
+            Result<A> result = None.Value;
+
             return (() =>
             {
                 if (run) return result;
@@ -80,28 +91,10 @@ namespace Jst4Code
                 return result;
             });
 
-        [Pure]
-        public static Try<U> Use<T, U>(this Try<T> self, Func<T, U> select)
-            where T : IDisposable =>
-            self.Map(x => x.Use(select));
-
-        /// <summary>
-        /// Functional implementation of the using(...) { } pattern
-        /// </summary>
-        /// <param name="disposable">Disposable to use</param>
-        /// <param name="f">Inner map function that uses the disposable value</param>
-        /// <returns>Result of f(disposable)</returns>
-        public static B Use<A, B>(this A disposable, Func<A, B> f)
-            where A : IDisposable
+        public static Result<A> Try<A>(this Func<A> func)
         {
-            try
-            {
-                return f(disposable);
-            }
-            finally
-            {
-                disposable?.Dispose();
-            }
+            try { return func(); }
+            catch (Exception ex) { return ex; }
         }
     }
 }

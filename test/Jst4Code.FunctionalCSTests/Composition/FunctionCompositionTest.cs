@@ -9,8 +9,8 @@ namespace Jst4Code.FunctionalCSTests.Composition
 {
     public class FunctionCompositionTest
     {
-        Func<string, string> appendHello = s => string.Join("", s, "Hello");
-        Func<string, string> appendWorld = s => string.Join("", s, "World");
+        Func<string, string> appendHello = s => $"{s}Hello";
+        Func<string, string> appendWorld = s => $"{s}World";
 
         Func<string, int> parse = int.Parse; // string -> int
         Func<int, double> convert = Convert.ToDouble; // int -> double
@@ -53,7 +53,7 @@ namespace Jst4Code.FunctionalCSTests.Composition
         public void Should_pipe_method_in_forward_direction()
         {
             // Act
-            var result = "4".Select(int.Parse).Select(Convert.ToDouble).Select(Math.Sqrt);
+            var result = "4".Map(int.Parse).Map(Convert.ToDouble).Map(Math.Sqrt);
             result.Should().Be(2);
         }
     }

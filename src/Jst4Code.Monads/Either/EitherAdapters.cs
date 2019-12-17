@@ -30,7 +30,7 @@ namespace Jst4Code.Monads
             Func<TLeft, TRight> map,
             Func<TLeft, bool> when) 
                 => either is Left<TLeft, TRight> bound && when(bound)
-                    ? (Either<TLeft, TRight>)map(bound)
+                    ? map(bound)
                     : either;
     }
 }
